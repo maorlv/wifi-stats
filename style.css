@@ -1,0 +1,103 @@
+/*
+|   Maor Levy
+|   @ https://github.com/redspade91
+|   2020
+*/
+
+:root {
+    --body_bg: #121212;
+    --text: #f9f9fa;
+    --box: #212121;
+    --best: #008000;
+    --ok: #ff8c00;
+    --worst: #ff0000;
+}
+
+:root[ngmode="false"] {
+    --body_bg: #ccc;
+    --text: #0c0c0c;
+    --box: #ddd; 
+}
+
+body {
+    background-color: var(--body_bg);
+    color: var(--text);
+    font-size: 5vh;
+    font-family: arial;
+    padding: 1em;
+    margin: 0;
+}
+
+h1 {
+    font-size: 8vh;
+    margin: 0 0 1em;
+}
+
+.det {
+    padding: 1em;
+    background-color: var(--box);
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.35);
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.det span {
+    font-weight: 700;
+    border-right: 1vw solid;
+    display: block;
+    margin-left: 1vh;
+}
+
+.det span[val="best"] {
+    color: var(--best);
+}
+
+.det span[val="OK"] {
+    color: var(--ok);
+}
+
+.det span[val="worst"] {
+    color: var(--worst);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    font-size: 3vh;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label div {
+    display: block;
+    content: "";
+    width: 7.5vh;
+    background-color: var(--best);
+    margin-left: 1em;
+    border-radius: 2.5vh;
+    box-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.2);
+    padding: 1vh;
+}
+
+input[type="checkbox"]:not(:checked) + label div {
+    background-color: var(--box);
+}
+
+input[type="checkbox"] + label div::after {
+    display: block;
+    content: "";
+    width: 3vh;
+    height: 3vh;
+    background-color: var(--text);
+    border-radius: 1.5vh;
+    transition: all ease 0.5s;
+}
+
+input[type="checkbox"]:not(:checked) + label div::after {
+    margin-left: 4.5vh;
+}
