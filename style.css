@@ -24,32 +24,38 @@
 body {
     background-color: var(--body_bg);
     color: var(--text);
-    font-size: 5vh;
+    font-size: 7vmin;
     font-family: arial;
-    padding: 1em;
+    padding: 4vh;
     margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 h1 {
-    font-size: 8vh;
-    margin: 0 0 1em;
+    font-size: 9vmin;
+    margin: 0 0 6vh;
 }
 
 .det {
-    padding: 1em;
+    padding: 4vh;
     background-color: var(--box);
-    border-radius: 0.5em;
+    border-radius: 0.75em;
     box-shadow: 1vh 1vh 2vh var(--shadow);
-    margin-bottom: 1em;
+    margin-bottom: 5vh;
     display: grid;
     grid-template-columns: auto 1fr;
+}
+
+.det:last-of-type {
+    margin-bottom: 6vh; 
 }
 
 .det span {
     font-weight: 700;
     border-right: 1vw solid;
     display: block;
-    margin-left: 1vh;
+    margin-left: 2vw;
 }
 
 .det span[val="best"] {
@@ -69,7 +75,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label {
-    font-size: 3vh;
+    font-size: 5vmin;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -78,12 +84,12 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label div {
     display: block;
     content: "";
-    width: 7.5vh;
+    width: 9vmin;
     background-color: var(--best);
     margin-left: 1em;
-    border-radius: 2.5vh;
-    box-shadow: 0.5vh 0.5vh 1vh var(--shadow);
-    padding: 1vh;
+    border-radius: 3.5vmin;
+    box-shadow: 0.5vmin 0.5vmin 1vmin var(--shadow);
+    padding: 1.5vmin;
 }
 
 input[type="checkbox"]:not(:checked) + label div {
@@ -93,13 +99,13 @@ input[type="checkbox"]:not(:checked) + label div {
 input[type="checkbox"] + label div::after {
     display: block;
     content: "";
-    width: 3vh;
-    height: 3vh;
+    width: 4vmin;
+    height: 4vmin;
     background-color: var(--text);
-    border-radius: 1.5vh;
+    border-radius: 2vmin;
     transition: all ease 0.5s;
 }
 
 input[type="checkbox"]:not(:checked) + label div::after {
-    margin-left: 4.5vh;
+    margin-left: 5vmin;
 }
