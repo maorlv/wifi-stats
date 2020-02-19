@@ -8,6 +8,7 @@
     --body_bg: #121212;
     --text: #f9f9fa;
     --box: #212121;
+    --shadow: rgba(5, 5, 5, 0.4);
     --best: #008000;
     --ok: #ff8c00;
     --worst: #ff0000;
@@ -17,6 +18,7 @@
     --body_bg: #ccc;
     --text: #0c0c0c;
     --box: #ddd; 
+    --shadow: rgba(70, 70, 70, 0.15);
 }
 
 body {
@@ -37,7 +39,7 @@ h1 {
     padding: 1em;
     background-color: var(--box);
     border-radius: 0.5em;
-    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.35);
+    box-shadow: 1vh 1vh 2vh var(--shadow);
     margin-bottom: 1em;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -80,7 +82,7 @@ input[type="checkbox"] + label div {
     background-color: var(--best);
     margin-left: 1em;
     border-radius: 2.5vh;
-    box-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.2);
+    box-shadow: 0.5vh 0.5vh 1vh var(--shadow);
     padding: 1vh;
 }
 
