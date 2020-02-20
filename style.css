@@ -15,10 +15,10 @@
 }
 
 :root[ngmode="false"] {
-    --body_bg: #ccc;
+    --body_bg: hsl(199, 92%, 85%);
     --text: #0c0c0c;
-    --box: #ddd; 
-    --shadow: rgba(70, 70, 70, 0.15);
+    --box: hsl(199, 94%, 96%); 
+    --shadow: hsla(201, 98%, 41%, 0.15);
 }
 
 body {
@@ -38,7 +38,7 @@ h1 {
 }
 
 .det {
-    padding: 4vh;
+    padding: 3.5vh;
     background-color: var(--box);
     border-radius: 0.75em;
     box-shadow: 1vh 1vh 2vh var(--shadow);
@@ -51,22 +51,24 @@ h1 {
     margin-bottom: 6vh; 
 }
 
-.det span {
+.det div {
     font-weight: 700;
-    border-right: 1vw solid;
-    display: block;
-    margin-left: 2vw;
+    border-right: 1vmax solid;
+    padding-left: 0.5ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
-.det span[val="best"] {
+.det div[val="best"] {
     color: var(--best);
 }
 
-.det span[val="OK"] {
+.det div[val="ok"] {
     color: var(--ok);
 }
 
-.det span[val="worst"] {
+.det div[val="worst"] {
     color: var(--worst);
 }
 

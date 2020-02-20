@@ -4,46 +4,48 @@
 |   2020
 */
 
-function colorize(best_gate, worst_gate, value, container) {
-    container.setAttribute("val", (value > best_gate) ? "best" : (value > worst_gate) ? "OK" : "worst");
+function fill(best_gate, worst_gate, value, container) {
+    container.parentNode.setAttribute("val", (value > best_gate) ? "best" : (value > worst_gate) ? "ok" : "worst");
+    container.textContent = value;
 }
 
-function toggleNightMode() {
-    next_mode = (document.querySelector("html").getAttribute("ngmode") == "false") ? "true" : "false";
+function toggleNightMode(next_mode) {
     localStorage.setItem("ng_mode", next_mode);
     document.querySelector("html").setAttribute("ngmode", next_mode);
 }
 
 // set up night mode control
 ng_mode = localStorage.getItem("ng_mode");
-ng_mode = (ng_mode == null) ? "true" : ng_mode;
+ng_mode = (ng_mode == null) ? document.querySelector("html").getAttribute("ngmode") : ng_mode;
 
 ng_button = document.getElementById("night_mode");
-ng_button.checked = true;
-
-if (ng_mode == "false") {
-    toggleNightMode();
-    ng_button.checked = false;
-}
+ng_button.checked = (ng_mode == "true") ? true : false;
+toggleNightMode(ng_button.checked);
 
 ng_button.addEventListener("change", ()=>{
-    toggleNightMode()
+    toggleNightMode(ng_button.checked);
 });
+
 
 // get info and change colors
 var containers = document.querySelectorAll(".det span");
-setInterval(function(){
+setInterval(()=>{
     fetch("./stats.txt")
     .then(txt=>txt.text())
     .then(txt => {
         let values = txt.split(",");
 
-        containers[1].textContent = values[2] + "%";
-        colorize(50, 35, parseInt(values[2]), containers[1]);
+        // reception
+        fill(50, 35, parseInt(values[2]), containers[1]);
 
-        containers[2].textContent = values[1] + " Mbps";
-        colorize(50, 20, parseFloat(values[1]), containers[2]);
+        // speed
+        fill(50, 20, parseFloat(values[1]), containers[2]);
 
+        // ssid
         containers[0].textContent = values[0];
+    })
+    .catch(()=>{
+        for (container of containers)
+            container.textContent = "- - ";
     });
 }, 500);
