@@ -8,17 +8,17 @@
     --body_bg: #121212;
     --text: #f9f9fa;
     --box: #212121;
-    --shadow: rgba(5, 5, 5, 0.4);
+    --shadow: rgba(5, 5, 5, .4);
     --best: #008000;
     --ok: #ff8c00;
     --worst: #ff0000;
 }
 
 :root[ngmode="false"] {
-    --body_bg: hsl(199, 92%, 85%);
+    --body_bg: #b6e6fc;
     --text: #0c0c0c;
-    --box: hsl(199, 94%, 96%); 
-    --shadow: hsla(201, 98%, 41%, 0.15);
+    --box: #ebf8fe; 
+    --shadow: rgba(2, 135, 207, .15);
 }
 
 body {
@@ -40,7 +40,7 @@ h1 {
 .det {
     padding: 3.5vh;
     background-color: var(--box);
-    border-radius: 0.75em;
+    border-radius: .75em;
     box-shadow: 1vh 1vh 2vh var(--shadow);
     margin-bottom: 5vh;
     display: grid;
@@ -54,7 +54,7 @@ h1 {
 .det div {
     font-weight: 700;
     border-right: 1vmax solid;
-    padding-left: 0.5ch;
+    padding-left: .5ch;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -76,7 +76,7 @@ input[type="checkbox"] {
     display: none;
 }
 
-input[type="checkbox"] + label {
+label {
     font-size: 5vmin;
     display: inline-flex;
     align-items: center;
@@ -85,12 +85,11 @@ input[type="checkbox"] + label {
 
 input[type="checkbox"] + label div {
     display: block;
-    content: "";
     width: 9vmin;
     background-color: var(--best);
     margin-left: 1em;
     border-radius: 3.5vmin;
-    box-shadow: 0.5vmin 0.5vmin 1vmin var(--shadow);
+    box-shadow: .5vmin .5vmin 1vmin var(--shadow);
     padding: 1.5vmin;
 }
 
@@ -105,7 +104,7 @@ input[type="checkbox"] + label div::after {
     height: 4vmin;
     background-color: var(--text);
     border-radius: 2vmin;
-    transition: all ease 0.5s;
+    transition: all .5s;
 }
 
 input[type="checkbox"]:not(:checked) + label div::after {
