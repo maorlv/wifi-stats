@@ -8,6 +8,7 @@ Stats can be viewed in the browser of every device connected to the same network
 
 ## Usage
 ### Prerequisites
+* Any portable device that is capable to connect to the same wireless network as the inspected computer, and has a browser application.
 * On inspected computer:
   - Windows 7+
   - Python 3
@@ -16,7 +17,6 @@ Stats can be viewed in the browser of every device connected to the same network
 pip install flask
 ```
    
-* Any portable device that is capable to connect to the same wireless network as the inspected computer, and has a browser application.
 
 ### How to use?
 1. Run the "start.py" python file on the computer you wish to inspect, then press **\<ENTER\>**.
