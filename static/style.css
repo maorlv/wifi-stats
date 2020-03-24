@@ -1,0 +1,112 @@
+/*
+|   Maor Levy
+|   @ https://github.com/redspade91
+|   2020
+*/
+
+:root {
+    --body_bg: #121212;
+    --text: #f9f9fa;
+    --box: #212121;
+    --shadow: rgba(5, 5, 5, .4);
+    --best: #008000;
+    --ok: #ff8c00;
+    --worst: #ff0000;
+}
+
+:root[ngmode="false"] {
+    --body_bg: #b6e6fc;
+    --text: #0c0c0c;
+    --box: #ebf8fe; 
+    --shadow: rgba(2, 135, 207, .15);
+}
+
+body {
+    background-color: var(--body_bg);
+    color: var(--text);
+    font-size: 7vmin;
+    font-family: arial;
+    padding: 4vh;
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+h1 {
+    font-size: 9vmin;
+    margin: 0 0 6vh;
+}
+
+.det {
+    padding: 3.5vh;
+    background-color: var(--box);
+    border-radius: .75em;
+    box-shadow: 1vh 1vh 2vh var(--shadow);
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.det:last-of-type {
+    margin-bottom: 6vh; 
+}
+
+.det div {
+    font-weight: 700;
+    border-right: 1vmax solid;
+    padding-left: .5ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.det div[val="best"] {
+    color: var(--best);
+}
+
+.det div[val="ok"] {
+    color: var(--ok);
+}
+
+.det div[val="worst"] {
+    color: var(--worst);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    font-size: 5vmin;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label div {
+    display: block;
+    width: 9vmin;
+    background-color: var(--best);
+    margin-left: 1em;
+    border-radius: 3.5vmin;
+    box-shadow: .5vmin .5vmin 1vmin var(--shadow);
+    padding: 1.5vmin;
+}
+
+input[type="checkbox"]:not(:checked) + label div {
+    background-color: var(--box);
+}
+
+input[type="checkbox"] + label div::after {
+    display: block;
+    content: "";
+    width: 4vmin;
+    height: 4vmin;
+    background-color: var(--text);
+    border-radius: 2vmin;
+    transition: all .5s;
+}
+
+input[type="checkbox"]:not(:checked) + label div::after {
+    margin-left: 5vmin;
+}

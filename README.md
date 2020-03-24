@@ -1,4 +1,4 @@
-# wifi-stats
+# Wifi-stats
 View realtime wifi-stats of a Windows computer on other devices.
 
 ## About
@@ -11,6 +11,11 @@ Stats can be viewed in the browser of every device connected to the same network
 * On inspected computer:
   - Windows 7+
   - Python 3
+  - Install the Flask package:
+```
+pip install flask
+```
+   
 * Any portable device that is capable to connect to the same wireless network as the inspected computer, and has a browser application.
 
 ### How to use?
